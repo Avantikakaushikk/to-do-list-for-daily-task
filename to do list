@@ -1,0 +1,11 @@
+
+tasks = []
+while True:
+    c = input("\n1.Add 2.View 3.Del 4.Done 5.Exit\n> ")
+    if c == "1": tasks.append([input("Task: "), False])
+    elif c == "2":
+        for i, (t, d) in enumerate(tasks): print(f"{i+1}. {t} [{'✓' if d else ' '}]")
+    elif c == "3": i = int(input("Del #: ")) - 1; tasks.pop(i) if 0 <= i < len(tasks) else None
+    elif c == "4": i = int(input("Done #: ")) - 1; tasks[i][1] = True if 0 <= i < len(tasks) else None
+    elif c == "5": break
+
